@@ -5,6 +5,8 @@ var upperChars = ["A", "B", "C", "D"," E"," F", "G", "H", "I", "J" ,"K" ,"L" ,"M
 var lowerChars = ["a", "b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var specialChars = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "?", "@"];
 
+var selectedChar
+
 var lowerConfirm
 var upperConfirm
 var numConfirm
@@ -15,13 +17,13 @@ var lengthInput
 
 
 
-function generatePassword() {
+// function generatePassword() {
 lengthInput = prompt("Choose a number between 8 and 128");
 var lengthInput = parseInt(lengthInput)
 console.log (lengthInput)
 if (lengthInput < 8 || lengthInput > 128) {
   alert("Password must be between 8-128 characters");
-  return null
+  // return null
 }
 
 
@@ -34,11 +36,27 @@ if (lengthInput < 8 || lengthInput > 128) {
   console.log (numConfirm);
   console.log (specialConfirm);
 
+ 
+
+
+//if none are true
+if(!lowerConfirm && !upperConfirm && !numConfirm && !specialConfirm) {
+  alert("Password must have at least one parameter!")}
+//if all are true
+if(lowerConfirm && upperConfirm && numConfirm && specialConfirm) {
+  selectedChar = lowerChars.concat(upperChars, numberChars, specialChars)
+  console.log (selectedChar)
 }
 
 
+// if(!lowerConfirm && !upperConfirm && !numConfirm && !specialConfirm) {
+  // alert("Password must have at least one parameter!")
 
-generatePassword ()
+
+
+
+
+// generatePassword ()
 
 
   
