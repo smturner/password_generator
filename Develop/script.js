@@ -47,10 +47,40 @@ if(lowerConfirm && upperConfirm && numConfirm && specialConfirm) {
   selectedChar = lowerChars.concat(upperChars, numberChars, specialChars)
   console.log (selectedChar)
 }
+//if three are true
+if (lowerConfirm && upperConfirm && numConfirm){
+  selectedChar = lowerChars.concat(upperChars, numberChars)
+}
+else if (lowerConfirm && upperConfirm && selectedChar){
+  selectedChar = lowerChars.concat(upperChars, selectedChar)
+}
+else if (lowerConfirm && selectedChar && numConfirm){
+  selectedChar = lowerChars.concat(selectedChar, numberChars)
+}
+else if (selectedChar && upperConfirm && numConfirm) {
+  selectedChar = selectedChar.concat(upperChars, numberChars)
+  console.log(selectedChar)
+}
 
-
-// if(!lowerConfirm && !upperConfirm && !numConfirm && !specialConfirm) {
-  // alert("Password must have at least one parameter!")
+//if two are true
+if (lowerChars && upperChars) {
+  selectedChar = lowerChars.concat(upperChars)
+}
+else if (lowerChars && numberChars) {
+  selectedChar = lowerChars.concat(numberChars)
+}
+else if (lowerChars && specialChars) {
+  selectedChar = lowerChars.concat(specialChars)
+}
+else if (specialChars && upperChars) {
+  selectedChar = specialChars.concat(upperChars)
+}
+else if (specialChars && numberChars) {
+  selectedChar = specialChars.concat(numberChars)
+}
+else if (upperChars && numberChars) {
+  selectedChar = upperChars.concat(numberChars)
+}
 
 
 
