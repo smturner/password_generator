@@ -21,6 +21,7 @@ var lengthInput = parseInt(lengthInput)
 console.log (lengthInput)
 if (lengthInput < 8 || lengthInput > 128) {
   alert("Password must be between 8-128 characters");
+
   return null
 }
 
@@ -100,7 +101,18 @@ else if (lowerConfirm && upperConfirm && numConfirm){
 }
 }
 
-generatePassword ()
+// generatePassword ()
+
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 
 
@@ -123,17 +135,6 @@ generatePassword ()
 //}
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword);
-console.log(generateBtn)
 
 
 //1. create variables to save user input from prompts (clicking comfirm (true,) cancel (false))
