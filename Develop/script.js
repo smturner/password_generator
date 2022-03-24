@@ -99,15 +99,18 @@ else if (lowerConfirm && upperConfirm && numConfirm){
   
 
 }
-}
+
 
 // generatePassword ()
 
+var pw = thePassword.join("")
 
+return pw
+}
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  passwordText.value;
+  passwordText.value=password;
 
 }
 
