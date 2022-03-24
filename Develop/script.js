@@ -1,12 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+//variable arrays to take from for password
 var numberChars = [0,1, 2, 3, 4, 5,6, 7, 8,9];
 var upperChars = ["A", "B", "C", "D"," E"," F", "G", "H", "I", "J" ,"K" ,"L" ,"M" ,"N", "O", "P", "Q", "R", "S", "T" ,"U", "V" ,"W", "X", "Y", "Z"];
 var lowerChars = ["a", "b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var specialChars = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "?", "@"];
 
 var selectedChar
-
 var lowerConfirm
 var upperConfirm
 var numConfirm
@@ -17,15 +18,19 @@ var lengthInput
 
 
 
-//function generatePassword() {
+function generatePassword() {
 lengthInput = prompt("Choose a number between 8 and 128");
 var lengthInput = parseInt(lengthInput)
 console.log (lengthInput)
 if (lengthInput < 8 || lengthInput > 128) {
-  alert("Password must be between 8-128 characters");
-//return null
-}
+  alert("Password must be between 8-128 characters");}
+// }else if (!lengthInput) {
+//   alert("This needs a value");
+// }
 
+//return null
+// generatePassword()
+// }
 
   lowerConfirm = confirm ("Click OK to confirm including lower case letters in password");
   upperConfirm = confirm ("Click OK to confirm including upper case letters in password");
@@ -37,17 +42,20 @@ if (lengthInput < 8 || lengthInput > 128) {
   console.log (specialConfirm);
 
  
-
+ 
 
 //if none are true
 if(!lowerConfirm && !upperConfirm && !numConfirm && !specialConfirm) {
   alert("Password must have at least one parameter!")}
+
+  generatePassword()
+}
 //if all are true
 if(lowerConfirm && upperConfirm && numConfirm && specialConfirm) {
   selectedChar = lowerChars.concat(upperChars, numberChars, specialChars)
   console.log (selectedChar)
 }
-}
+
 //if three are true
 if (lowerConfirm && upperConfirm && numConfirm){
   selectedChar = lowerChars.concat(upperChars, numberChars)
@@ -85,14 +93,14 @@ else if (upperChars && numberChars) {
 
 //if one is selected
 
-var thePassword = []
+// var thePassword = []
 
-for(var i=0; i < lengthInput; i++) {
-  var pickChoices = selectedChar [Math.floor(Math.random() * selectedChar.length)]; 
-thePassword.push(pickChoices);
-console.log (pickChoices);
+// for(var i=0; i < lengthInput; i++) {
+//   var pickChoices = selectedChar [Math.floor(Math.random() * selectedChar.length)]; 
+// thePassword.push(pickChoices);
+// console.log (pickChoices);
  
-}
+// }
 
 
 
