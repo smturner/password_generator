@@ -7,6 +7,7 @@ var upperChars = ["A", "B", "C", "D"," E"," F", "G", "H", "I", "J" ,"K" ,"L" ,"M
 var lowerChars = ["a", "b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var specialChars = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "?", "@"];
 
+  //variables for selectors
 var selectedChar
 var lowerConfirm
 var upperConfirm
@@ -14,49 +15,44 @@ var numConfirm
 var specialConfirm
 var lengthInput
 
+  //creates a clickable button
+generateBtn.onclick=generatePassword;
 
-
-
-
-function generatePassword() {
-lengthInput = prompt("Choose a number between 8 and 128");
+ function generatePassword() {
+    //passwordlength prompt
+lengthInput=prompt("Choose a number between 8 and 128");
 var lengthInput = parseInt(lengthInput)
-console.log (lengthInput)
+//console.log (lengthInput)
 if (lengthInput < 8 || lengthInput > 128) {
-  alert("Password must be between 8-128 characters");}
-// }else if (!lengthInput) {
-//   alert("This needs a value");
-// }
+  alert("Password must be between 8-128 characters");
+}else if (!lengthInput) {
+ prompt("Need a valid input. Choose a number between 8 and 128");
+}
 
 //return null
-// generatePassword()
-// }
+  //password value confirms
+lowerConfirm = confirm ("Click OK to confirm including lower case letters in password");
+upperConfirm = confirm ("Click OK to confirm including upper case letters in password");
+numConfirm = confirm ("Click OK to confirm including numbers in password");
+specialConfirm = confirm ("Click OK to confirm including special characters in password");
+console.log (lowerConfirm);
+console.log (upperConfirm);
+console.log (numConfirm);
+console.log (specialConfirm);
 
-  lowerConfirm = confirm ("Click OK to confirm including lower case letters in password");
-  upperConfirm = confirm ("Click OK to confirm including upper case letters in password");
-  numConfirm = confirm ("Click OK to confirm including numbers in password");
-  specialConfirm = confirm ("Click OK to confirm including special characters in password");
-  console.log (lowerConfirm);
-  console.log (upperConfirm);
-  console.log (numConfirm);
-  console.log (specialConfirm);
 
- 
- 
-
-//if none are true
+  //if none are true
 if(!lowerConfirm && !upperConfirm && !numConfirm && !specialConfirm) {
-  alert("Password must have at least one parameter!")}
-
-  generatePassword()
+  alert("Password must have at least one parameter!")
 }
-//if all are true
+
+  //if all are true
 if(lowerConfirm && upperConfirm && numConfirm && specialConfirm) {
   selectedChar = lowerChars.concat(upperChars, numberChars, specialChars)
   console.log (selectedChar)
 }
 
-//if three are true
+  //if three are true
 if (lowerConfirm && upperConfirm && numConfirm){
   selectedChar = lowerChars.concat(upperChars, numberChars)
 }
@@ -71,36 +67,50 @@ else if (selectedChar && upperConfirm && numConfirm) {
   console.log(selectedChar)
 }
 
-//if two are true
-if (lowerChars && upperChars) {
+  //if two are true
+if (lowerConfirm && upperConfirm) {
   selectedChar = lowerChars.concat(upperChars)
 }
-else if (lowerChars && numberChars) {
+else if (lowerConfirm && numConfirm) {
   selectedChar = lowerChars.concat(numberChars)
 }
-else if (lowerChars && specialChars) {
+else if (lowerConfirm && specialConfirm) {
   selectedChar = lowerChars.concat(specialChars)
 }
-else if (specialChars && upperChars) {
+else if (specialConfirm && upperConfirm) {
   selectedChar = specialChars.concat(upperChars)
 }
-else if (specialChars && numberChars) {
+else if (specialConfirm && numConfirm) {
   selectedChar = specialChars.concat(numberChars)
 }
-else if (upperChars && numberChars) {
+else if (upperConfirm && numConfirm) {
   selectedChar = upperChars.concat(numberChars)
 }
 
-//if one is selected
+  //if one is ture
+if (lowerConfirm){
+  selectedChar= lowerChars
+}else if (upperConfirm){
+  selectedChar=upperChars
+}else if (numConfirm){
+  selectedChar=numberChars
+}else if (specialConfirm){
+  selectedChar=specialChars
+}
 
-// var thePassword = []
 
-// for(var i=0; i < lengthInput; i++) {
-//   var pickChoices = selectedChar [Math.floor(Math.random() * selectedChar.length)]; 
-// thePassword.push(pickChoices);
-// console.log (pickChoices);
- 
-// }
+  //for loop to gather the password characters
+var thePassword = []
+
+for(var i=0; i < lengthInput; i++) {
+  var pickChoices = selectedChar [Math.floor(Math.random() * selectedChar.length)]; 
+thePassword.push(pickChoices);
+console.log (pickChoices);
+}
+
+}
+generatePassword()
+
 
 
 
