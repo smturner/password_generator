@@ -17,13 +17,13 @@ var lengthInput
 
 
 
-// function generatePassword() {
+//function generatePassword() {
 lengthInput = prompt("Choose a number between 8 and 128");
 var lengthInput = parseInt(lengthInput)
 console.log (lengthInput)
 if (lengthInput < 8 || lengthInput > 128) {
   alert("Password must be between 8-128 characters");
-  // return null
+//return null
 }
 
 
@@ -46,6 +46,7 @@ if(!lowerConfirm && !upperConfirm && !numConfirm && !specialConfirm) {
 if(lowerConfirm && upperConfirm && numConfirm && specialConfirm) {
   selectedChar = lowerChars.concat(upperChars, numberChars, specialChars)
   console.log (selectedChar)
+}
 }
 //if three are true
 if (lowerConfirm && upperConfirm && numConfirm){
@@ -81,6 +82,19 @@ else if (specialChars && numberChars) {
 else if (upperChars && numberChars) {
   selectedChar = upperChars.concat(numberChars)
 }
+
+//if one is selected
+
+var thePassword = []
+
+for(var i=0; i < lengthInput; i++) {
+  var pickChoices = selectedChar [Math.floor(Math.random() * selectedChar.length)]; 
+thePassword.push(pickChoices);
+console.log (pickChoices);
+ 
+}
+
+
 
 
 
@@ -133,7 +147,7 @@ generateBtn.addEventListener("click", writePassword);
     //When user says no if else?
 //2. create an array with special characters, uppercase letters, lowercase letters, numbers
   //specialCharacters, Uppercase, lowercase, numeric
-  //3. use randomizer function to select characters from each array
+  //3. use randomizer function to selet characters from each array
 //4. generatePassword function --take user input, grab charcters from array and generate password
 
 //5. create an empty array that represents the final password
@@ -142,4 +156,4 @@ generateBtn.addEventListener("click", writePassword);
   // randomize characters from the joined array
 
   //transforming the array into a string-you can use join
-  //array.join ('')
+  //array.join ('')}
