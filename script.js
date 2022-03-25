@@ -28,10 +28,10 @@ if (lengthInput < 8 || lengthInput > 128) {
   upperConfirm = confirm ("Click OK to including upper case letters in password");
   numConfirm = confirm ("Click OK to including numbers in password");
   specialConfirm = confirm ("Click OK to including special characters in password");
-  // console.log (lowerConfirm);
-  // console.log (upperConfirm);
-  // console.log (numConfirm);
-  // console.log (specialConfirm);
+  console.log (lowerConfirm);
+  console.log (upperConfirm);
+  console.log (numConfirm);
+  console.log (specialConfirm);
 
 //if none are true
 if(!lowerConfirm && !upperConfirm && !numConfirm && !specialConfirm) {
@@ -104,6 +104,7 @@ var pw = thePassword.join("")
 return pw
 
 }
+
 //function that actually writes the password and calls the generatePassword function
 function writePassword() {
   var password = generatePassword();
