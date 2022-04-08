@@ -22,10 +22,10 @@ These photos shows what happens when the page gets deployed, the generate passwo
 This project has the following features:
  <ul>
     <li> The generate password button, that when pressed pops up the user menu to populate the charaters for the password</li>
-    <li> The pop-up allows the user to choose the length of the password and if they want to add uppercase letters, lowercase letters, numbers and special characters.</li>
-    <li>User must put a number in between 8-128</li>
-    <li>User must choose at least one of the character options or they will get an alert with an error</li>
-
+    <li> The pop-up allows the user to choose the length of the password by putting in a number 8-128.</li>
+    <li> Once the user chooses the number of characters the next prompts will take you through if the user wants to add uppercase letters, lowercase letters, numbers and special characters by clicking okay or cancel.</li>
+    <li>User must choose at least one of the character options or they will get an alert with an error.</li>
+    <li>Once user has gotten through all the prompts it will display a random password with the characters user chose</li>
 </ul>
 
 ## Links to application
@@ -33,5 +33,13 @@ This project has the following features:
 <a href="https://github.com/smturner/password_generator">GitHub link </a>
 
 <a href= "https://smturner.github.io/password_generator/">Web Application link </a>
+
+## Technology Used:
+HTML
+CSS
+JavaScript
+
+## Contributors
+Sarah Turner ©2022 All Rights Reserved.
 
 
